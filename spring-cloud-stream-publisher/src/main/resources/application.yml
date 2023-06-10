@@ -2,5 +2,7 @@ spring:
   cloud:
     stream:
       bindings:
-        output:
-          destination: javatechie-stream
+        output1:
+          destination: book-topic1
+        output2:
+          destination: book-topic2

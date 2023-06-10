@@ -9,13 +9,18 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 
 @SpringBootApplication
-@EnableBinding(Sink.class)
+@EnableBinding(CustomSource.class)
 public class SpringCloudStreamConsumerApplication {
 
     private Logger logger = LoggerFactory.getLogger(SpringCloudStreamConsumerApplication.class);
 
-    @StreamListener("input")
-    public void consumeMessage(Book book) {
+    @StreamListener("input1")
+    public void consumeMessageFromInput1(Book book) {
+        logger.info("Consume payload : " + book);
+    }
+
+    @StreamListener("input2")
+    public void consumeMessageFromInput2(Book book) {
         logger.info("Consume payload : " + book);
     }
 
