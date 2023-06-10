@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringCloudStreamPublisherApplication {
     @Autowired
-    @Qualifier("output1")
+    @Qualifier(CustomSource.output1)
     private MessageChannel output1;
 
     @Autowired
-    @Qualifier("output2")
+    @Qualifier(CustomSource.output2)
     private MessageChannel output2;
 
     @PostMapping("/publish-via-output1")
